@@ -154,3 +154,9 @@ class Channel(dict):
         cmd = messages.MoveCmd(session, self["channel_id"])
         self.mumble_object.execute_command(cmd)
 
+    def send_text_message(self, message):
+        """Send a text message to the channel."""
+        session = self.mumble_object.users.myself_session
+
+        cmd = messages.TextMessage(session, self["channel_id"], message)
+        self.mumble_object.execute_command(cmd)

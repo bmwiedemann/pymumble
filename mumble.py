@@ -491,6 +491,14 @@ class Mumble(threading.Thread):
             self.send_message(PYMUMBLE_MSG_TYPES_USERSTATE, userstate)
             cmd.response = True
             self.commands.answer(cmd)
+        elif cmd.cmd == PYMUMBLE_CMD_TEXTMESSAGE:
+            textmessage = mumble_pb2.TextMessage()
+            textmessage.session.append(cmd.parameters["session"])
+            textmessage.channel_id.append(cmd.parameters["channel_id"])
+            textmessage.message = cmd.parameters["message"]
+            self.send_message(PYMUMBLE_MSG_TYPES_TEXTMESSAGE, textmessage)
+            cmd.response = True
+            self.commands.answer(cmd)
         elif cmd.cmd == PYMUMBLE_CMD_MODUSERSTATE:
             userstate = mumble_pb2.UserState()
             userstate.session = cmd.parameters["session"]

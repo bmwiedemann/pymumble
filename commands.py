@@ -10,11 +10,11 @@ class Commands():
     """
     def __init__(self):
         self.id = 0
-        
-        self.queue = deque() 
-        
+
+        self.queue = deque()
+
         self.lock = Lock()
-    
+
     def new_cmd(self, cmd):
         """Add a command to the queue"""
         self.lock.acquire()
@@ -26,14 +26,14 @@ class Commands():
 
         self.lock.release()
         return cmd.lock
-    
+
     def is_cmd(self):
         """Check if there is a command waiting in the queue"""
         if len(self.queue) > 0:
             return True
         else:
             return False
-        
+
     def pop_cmd(self):
         """Return the next command and remove it from the queue"""
         self.lock.acquire()
@@ -45,9 +45,7 @@ class Commands():
         else:
             self.lock.release()
             return None
-    
+
     def answer(self, cmd):
         """Unlock the command to signal it's completion"""
         cmd.lock.release()
-    
-

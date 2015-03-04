@@ -142,7 +142,7 @@ Take care of the decoding and keep track on the timing of the reception
 
 Allow to stop treating incoming audio for a specific user if False.  True by default.
 
-> User.sounf.is_sound()
+> User.sound.is_sound()
 
 Return True if sound if present in this SoudQueue
 
@@ -252,10 +252,3 @@ Add PCM sound (16 bites mono 48000Hz little-endian encoded) to the outgoing queu
 > Mumble.sound_output.get_buffer_size()
 
 Return in secs the size of the unsent audio buffer.  Usefull to transfer audio to the library at a regular pace
-
-
-
-
-
-
-

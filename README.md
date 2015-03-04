@@ -51,14 +51,9 @@ python binding...
 
 Requirements/installation
 -------------------------
-It seems to work fine on Python 2.6 and 2.7.
-I have used it on both Windows and Linux
 
-Cython is needed, at least 0.14, and you need a worinkg compiler environment (I use MINGW for windows)
-
-in the pyopus and pycelt directories, there is a basic Makefile that should compile the library and create the
-loadable compiled Python module at the correct place.  You have to edit these Makefiles to select your environment (Linux or Mingw)
-If your cython installation use PIC compiled libraries, you will also hav to uncomment the "CONFIGURE_OPTS = "--with-pic" line.  You'll know if you get compilation error like "relocation R_X86_64_32S against `.rodata' can not be used when making a shared object; recompile with -fPIC"...  no idea how to check that automatically...
+1. On a Debian-based system, install cython, build-essential, python-protobuf, libogg-dev.
+1. In the pyopus and pycelt directories, run `make`.
 
 Issues
 ------

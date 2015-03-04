@@ -1,10 +1,10 @@
 # PLATFORM may be "MINGW32" or "UNIX"
-export PLATFORM = MINGW32
-#export PLATFORM = UNIX
+#export PLATFORM = MINGW32
+export PLATFORM = UNIX
 
 # for system with "PIC" compiled static libraries
-export CONFIGURE_OPTS = ""
-#export CONFIGURE_OPTS = "--with-pic"
+#export CONFIGURE_OPTS = ""
+export CONFIGURE_OPTS = "--with-pic"
 #-------------------------
 ifeq ($(PLATFORM), MINGW32)
 	MOD_EXT = pyd

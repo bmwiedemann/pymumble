@@ -47,7 +47,10 @@ cdef class OpusEncoder:
         outBytes = <unsigned char *>out
 
         #free(out)
-        return outBytes[:len]
+        if len > 0:
+            return outBytes[:len]
+        else:
+            return outBytes[:0]
         
 cdef class OpusDecoder:
     """
@@ -92,5 +95,3 @@ cdef class OpusDecoder:
         result = self.pcm_buffer
         
         return result[:ret*(self.signal_depth/8)*self.channels]
-        
-        

@@ -6,7 +6,7 @@
 #
 from libc.stdint cimport int16_t, uint16_t, int32_t, uint32_t
 
-cdef extern from "opus-1.1/include/opus_types.h":
+cdef extern from "opus/opus_types.h":
     ctypedef int16_t opus_int16
     ctypedef uint16_t opus_uint16
     ctypedef int32_t opus_int32
@@ -22,7 +22,7 @@ cdef extern from "opus-1.1/include/opus_types.h":
 #
 # Main definitions
 #
-cdef extern from "opus-1.1/include/opus.h":
+cdef extern from "opus/opus.h":
     
 # Encoder
     
@@ -136,7 +136,7 @@ cdef extern from "opus-1.1/include/opus.h":
 #
 # Constants definitions
 #
-cdef extern from "opus-1.1/include/opus_defines.h":
+cdef extern from "opus/opus_defines.h":
     int OPUS_OK
     int OPUS_BAD_ARG
     int OPUS_BUFFER_TOO_SMALL

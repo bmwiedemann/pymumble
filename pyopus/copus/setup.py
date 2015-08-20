@@ -7,7 +7,7 @@ from Cython.Distutils import build_ext
 ext_modules = [
   Extension("copus",
             sources = ["copus.pyx"],
-            extra_objects=["opus-1.1/.libs/libopus.a"])
+            extra_objects=["-lopus"])
   ]
 
 setup(

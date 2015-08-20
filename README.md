@@ -52,7 +52,7 @@ python binding...
 Requirements/installation
 -------------------------
 
-1. On a Debian-based system, install cython, build-essential, python-protobuf, libogg-dev.
+1. On a Debian-based system, install cython, build-essential, python-protobuf, libogg-dev libopus-dev.
 1. In the pyopus and pycelt directories, run `make`.
 
 Issues

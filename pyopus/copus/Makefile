@@ -14,7 +14,7 @@ MOD_NAME = copus
 
 #-------------------------
 
-$(MOD_NAME).$(MOD_EXT) : $(OPUS)/.libs/libopus.a $(MOD_NAME).pyx c$(MOD_NAME).pxd
+$(MOD_NAME).$(MOD_EXT) : $(MOD_NAME).pyx c$(MOD_NAME).pxd
 	python setup.py build_ext --inplace $(ADD_FLAGS)
 
 $(OPUS)/.libs/libopus.a : $(OPUS)/Makefile
